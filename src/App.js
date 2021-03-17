@@ -78,10 +78,11 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Map tiles={tiles}/>
+    <div className="cartographers">
+      <header className="cartographers-header">
+        Cartographers map generator
       </header>
+      <Map tiles={tiles}/>
     </div>
   );
 }

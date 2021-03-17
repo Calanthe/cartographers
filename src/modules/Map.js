@@ -2,31 +2,32 @@ import React from "react";
 //import classNames from "classnames";
 
 export default function Map(props) {
-    let tiles = props.tiles;
+	let tiles = props.tiles,
+		mapSpaces = [];
 
-	// tiles.forEach((tile, i) => {
-	// 	const typeClass = tile.type,
-	// 		/*tileClassName = classNames(
-	// 			"tile",
-	// 			typeClass
-    //         ),*/
-    //         tileClassName = "ddd",
-	// 		tile = (
-	// 			<div
-	// 				tileClassName={tileClassName}
-	// 				cell={cell}
-    //                 key={cell.uniqueKey.toString()}
-    //             ></div>
-	// 		);
+	tiles.forEach((tileRow, i) => {
+		tileRow.forEach((tile, j) => {
+			console.log(tile, i, j)
+			const tileClass = tile.type,
+				uniqueKey = i + '-' + j;
+				/*tileClassName = classNames(
+					"tile",
+					typeClass
+				),
+				tileClassName = "ddd";*/
 
-	// 	tiles.push(tile);
-	// });
-
-	console.log(tiles)
+			mapSpaces.push(
+				<div
+					className={tileClass}
+					key={uniqueKey.toString()}
+				></div>
+			);
+		});
+	});
 
 	return (
-		<div className="board">
-			test
+		<div className="map">
+			{mapSpaces}
 		</div>
 	);
 };
