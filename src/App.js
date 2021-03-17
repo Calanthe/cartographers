@@ -1,9 +1,10 @@
 import './App.css';
 import Map from "./modules/Map";
+import GenerateMapBtn from "./modules/GenerateMapBtn"
 
 import { TILE_TYPES } from "./misc/constants";
 
-function App() {
+function App() { //TODO use React class?
   let tiles = [
     [
       {
@@ -77,12 +78,17 @@ function App() {
     ]
   ];
 
+  function handleGenerateMap() {
+		console.log();
+	};
+
   return (
     <div className="cartographers">
-      <header className="cartographers-header">
+      <header className="cartographers__header">
         Cartographers map generator
       </header>
       <Map tiles={tiles}/>
+      <GenerateMapBtn onGenerateMap={handleGenerateMap}/>
     </div>
   );
 }

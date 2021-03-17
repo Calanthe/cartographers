@@ -1,24 +1,23 @@
 import React from "react";
-//import classNames from "classnames";
+import classNames from "classnames";
 
 export default function Map(props) {
 	let tiles = props.tiles,
-		mapSpaces = [];
+	mapTiles = [];
 
 	tiles.forEach((tileRow, i) => {
 		tileRow.forEach((tile, j) => {
 			console.log(tile, i, j)
-			const tileClass = tile.type,
-				uniqueKey = i + '-' + j;
-				/*tileClassName = classNames(
-					"tile",
+			const typeClass = 'cartographers__tile--' + tile.type,
+				uniqueKey = i + '-' + j,
+				tileClassName = classNames(
+					"cartographers__tile",
 					typeClass
-				),
-				tileClassName = "ddd";*/
+				);
 
-			mapSpaces.push(
+				mapTiles.push(
 				<div
-					className={tileClass}
+					className={tileClassName}
 					key={uniqueKey.toString()}
 				></div>
 			);
@@ -26,8 +25,8 @@ export default function Map(props) {
 	});
 
 	return (
-		<div className="map">
-			{mapSpaces}
+		<div className="cartographers__map">
+			{mapTiles}
 		</div>
 	);
 };
