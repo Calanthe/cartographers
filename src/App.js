@@ -1,22 +1,86 @@
-import logo from './logo.svg';
 import './App.css';
+import Map from "./modules/Map";
+
+import { TILE_TYPES } from "./misc/constants";
 
 function App() {
+  let tiles = [
+    [
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[1]
+      },
+      {
+        type: TILE_TYPES[1]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[2]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[3]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      }
+    ],
+    [
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[1]
+      },
+      {
+        type: TILE_TYPES[1]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[2]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[3]
+      },
+      {
+        type: TILE_TYPES[0]
+      },
+      {
+        type: TILE_TYPES[0]
+      }
+    ]
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Map tiles={tiles}/>
       </header>
     </div>
   );
