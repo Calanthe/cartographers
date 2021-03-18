@@ -7,7 +7,6 @@ export default function Map(props) {
 
 	tiles.forEach((tileRow, i) => {
 		tileRow.forEach((tile, j) => {
-			console.log(tile, i, j)
 			const typeClass = 'cartographers__tile--' + tile.type,
 				uniqueKey = i + '-' + j,
 				tileClassName = classNames(

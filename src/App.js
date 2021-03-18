@@ -1,96 +1,33 @@
 import './App.css';
+import React from "react";
 import Map from "./modules/Map";
 import GenerateMapBtn from "./modules/GenerateMapBtn"
 
-import { TILE_TYPES } from "./misc/constants";
+import { GenerateMap } from "./misc/helpers";
 
-function App() { //TODO use React class?
-  let tiles = [
-    [
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[1]
-      },
-      {
-        type: TILE_TYPES[1]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[2]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[3]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      }
-    ],
-    [
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[1]
-      },
-      {
-        type: TILE_TYPES[1]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[2]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[3]
-      },
-      {
-        type: TILE_TYPES[0]
-      },
-      {
-        type: TILE_TYPES[0]
-      }
-    ]
-  ];
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tiles: GenerateMap()
+    };
+  };
 
-  function handleGenerateMap() {
-		console.log();
+  handleGenerateMap() {
+		GenerateMap();
 	};
 
-  return (
-    <div className="cartographers">
-      <header className="cartographers__header">
-        Cartographers map generator
-      </header>
-      <Map tiles={tiles}/>
-      <GenerateMapBtn onGenerateMap={handleGenerateMap}/>
-    </div>
-  );
+  render() {
+    return (
+      <div className="cartographers">
+        <header className="cartographers__header">
+          Cartographers map generator
+        </header>
+        <Map tiles={this.state.tiles}/>
+        <GenerateMapBtn onGenerateMap={this.handleGenerateMap}/>
+      </div>
+    );
+  };
 }
 
 export default App;
