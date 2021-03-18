@@ -14,7 +14,9 @@ class App extends React.Component {
     };
 
   handleGenerateMap() {
-		  GenerateMap();
+      this.setState({
+        tiles: GenerateMap()
+      })
 	};
 
   render() {
@@ -24,7 +26,7 @@ class App extends React.Component {
                   Cartographers map generator
               </header>
               <Map tiles={this.state.tiles}/>
-              <GenerateMapBtn onGenerateMap={this.handleGenerateMap}/>
+              <GenerateMapBtn onGenerateMap={this.handleGenerateMap.bind(this)}/>
           </div>
       );
   };

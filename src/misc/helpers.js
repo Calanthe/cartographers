@@ -11,7 +11,7 @@ function getRandomValue(range) {
 /**
  * Get array of wasteland coords
 */
-function getWastelandCords(width, height, array) {
+function getWastelandCoords(width, height, array) {
     let result = [],
         randomCoordX, randomCoordY;
 
@@ -43,8 +43,11 @@ export function GenerateMap() {
     }
 
     // generate wasteland
-    wastelandCoords = getWastelandCords(MAP_WIDTH, MAP_HEIGHT, tiles);
-
+    wastelandCoords = getWastelandCoords(MAP_WIDTH, MAP_HEIGHT, tiles);
+    wastelandCoords.forEach(val => {
+        tiles[val.x][val.y] = TILE_TYPES[1];
+    })
+    
     console.log(wastelandCoords)
 
     return tiles;

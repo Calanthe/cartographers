@@ -18,7 +18,9 @@ export default function Map(props) {
 				<div
 					className={tileClassName}
 					key={uniqueKey.toString()}
-				></div>
+				>
+					{tile.type !== 'empty' ? 1 : 0}
+				</div>
 			);
 		});
 	});
