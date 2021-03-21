@@ -28,27 +28,24 @@ function getNeighbors(x, y, mapArray) {
 */
 function getRandomNeighbor(mapArray) {
     let availableNeighbors = [],
-        randomVal, neightborCoords;
+        randomVal, neighbors, randomNeightborCoords;
 
     // check every empty tile around existing wasteland
     mapArray.forEach((tileColumn, x) => {
         tileColumn.forEach((tile , y) => {
             if (tile.type === TILE_TYPES[1]) {
-                let leftNeighbor = mapArray[x][y - 1] ? mapArray[x][y - 1] : undefined,
-                    rightNeighbor = mapArray[x][y + 1] ? mapArray[x][y + 1] : undefined,
-                    topNeighbor = mapArray[x - 1] ? mapArray[x - 1][y] : undefined,
-                    bottomNeighbor = mapArray[x + 1] ? mapArray[x + 1][y] : undefined;
+                neighbors = getNeighbors(x, y, mapArray);
 
-                if (leftNeighbor?.type === TILE_TYPES[0]) {
+                if (neighbors.left?.type === TILE_TYPES[0]) {
                     availableNeighbors.push({x: x, y: y - 1});
                 }
-                if (rightNeighbor?.type === TILE_TYPES[0]) {
+                if (neighbors.right?.type === TILE_TYPES[0]) {
                     availableNeighbors.push({x: x, y: y + 1});
                 }
-                if (topNeighbor?.type === TILE_TYPES[0]) {
+                if (neighbors.top?.type === TILE_TYPES[0]) {
                     availableNeighbors.push({x: x - 1, y: y});
                 }
-                if (bottomNeighbor?.type === TILE_TYPES[0]) {
+                if (neighbors.bottom?.type === TILE_TYPES[0]) {
                     availableNeighbors.push({x: x + 1, y: y});
                 }
             }
@@ -56,11 +53,11 @@ function getRandomNeighbor(mapArray) {
     })
 
     randomVal = getRandomValue(availableNeighbors.length - 1);
-    neightborCoords = availableNeighbors[randomVal];
+    randomNeightborCoords = availableNeighbors[randomVal];
 
     return {
-        x: neightborCoords.x, 
-        y: neightborCoords.y 
+        x: randomNeightborCoords.x, 
+        y: randomNeightborCoords.y 
     };
 }
 
