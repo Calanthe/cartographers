@@ -7,5 +7,5 @@ export const TILE_TYPES = {
     0: "empty",
     1: "wasteland",
 	2: "mountain",
-	3: "ruins"
+	3: "ruin"
 };

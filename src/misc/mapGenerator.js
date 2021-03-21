@@ -125,6 +125,41 @@ function generateMountains(mapArray) {
     return mapArray;
 }
 
+/**
+ * Generate Ruins. 
+ * Returns modified mapArray.
+*/
+function generateRuins(mapArray) {
+    let randomCoordX, randomCoordY, neighbors,
+        isRuinAdded = true;
+
+    for (let i = 0; i < RUINS_NO; i++) {   
+        do {
+            isRuinAdded = false;
+
+            // get a random tile
+            randomCoordX = getRandomValue(MAP_WIDTH);
+            randomCoordY = getRandomValue(MAP_HEIGHT);
+
+            neighbors = getNeighbors(randomCoordX, randomCoordY, mapArray);
+
+            //check if the random tile is empty and has no other ruins in the neighborhood
+            if (mapArray[randomCoordX][randomCoordY].type === TILE_TYPES[0]
+                && neighbors.left?.type !== TILE_TYPES[3] 
+                && neighbors.right?.type !== TILE_TYPES[3] 
+                && neighbors.top?.type !== TILE_TYPES[3]
+                && neighbors.bottom?.type !== TILE_TYPES[3]) {
+                    mapArray[randomCoordX][randomCoordY] = {
+                        type: TILE_TYPES[3]
+                    }
+                    isRuinAdded = true;
+                }
+            } while (!isRuinAdded);
+    }
+
+    return mapArray;
+}
+
 export function GenerateMap() {
     let tiles = new Array(MAP_WIDTH);
 
@@ -142,6 +177,9 @@ export function GenerateMap() {
 
     // generate mountains
     tiles = generateMountains(tiles);
+
+    // generate ruins
+    tiles = generateRuins(tiles);
 
     return tiles;
 }

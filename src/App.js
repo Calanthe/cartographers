@@ -3,7 +3,7 @@ import React from "react";
 import Map from "./modules/Map";
 import GenerateMapBtn from "./modules/GenerateMapBtn"
 
-import { GenerateMap } from "./misc/helpers";
+import { GenerateMap } from "./misc/mapGenerator";
 
 class App extends React.Component {
     constructor(props) {
