@@ -13,7 +13,7 @@ function getRandomValue(range) {
  * Get all neighbors of given tile's coords.
  * Returns an object with all four neighbors.
 */
-function getNeighbors(x, y, mapArray) {
+export function getNeighbors(x, y, mapArray) {
     return {
         left: mapArray[x][y - 1] ? mapArray[x][y - 1] : undefined,
         right: mapArray[x][y + 1] ? mapArray[x][y + 1] : undefined,
@@ -88,6 +88,24 @@ function generateWasteland(mapArray) {
 }
 
 /**
+ * Check if the given tile is empty and has no other tiles with the given type in the neighborhood 
+ * Returns boolean.
+*/
+export function ifValidNeighbors(tile, neighbors, typeToCheck) {
+    let result = false;
+
+    if (tile.type === TILE_TYPES[0]
+        && neighbors.left?.type !== typeToCheck 
+        && neighbors.right?.type !== typeToCheck 
+        && neighbors.top?.type !== typeToCheck
+        && neighbors.bottom?.type !== typeToCheck) {
+        result = true;
+    }
+
+    return result;
+}
+
+/**
  * Generate Mountains. 
  * Returns modified mapArray.
 */
@@ -106,11 +124,7 @@ function generateMountains(mapArray) {
             neighbors = getNeighbors(randomCoordX, randomCoordY, mapArray);
 
             //check if the random tile is empty and has no other mountains in the neighborhood
-            if (mapArray[randomCoordX][randomCoordY].type === TILE_TYPES[0]
-                && neighbors.left?.type !== TILE_TYPES[2] 
-                && neighbors.right?.type !== TILE_TYPES[2] 
-                && neighbors.top?.type !== TILE_TYPES[2]
-                && neighbors.bottom?.type !== TILE_TYPES[2]) {
+            if (ifValidNeighbors(mapArray[randomCoordX][randomCoordY], neighbors, TILE_TYPES[2])) {
                     mapArray[randomCoordX][randomCoordY] = {
                         type: TILE_TYPES[2]
                     }
@@ -141,11 +155,7 @@ function generateRuins(mapArray) {
             neighbors = getNeighbors(randomCoordX, randomCoordY, mapArray);
 
             //check if the random tile is empty and has no other ruins in the neighborhood
-            if (mapArray[randomCoordX][randomCoordY].type === TILE_TYPES[0]
-                && neighbors.left?.type !== TILE_TYPES[3] 
-                && neighbors.right?.type !== TILE_TYPES[3] 
-                && neighbors.top?.type !== TILE_TYPES[3]
-                && neighbors.bottom?.type !== TILE_TYPES[3]) {
+            if (ifValidNeighbors(mapArray[randomCoordX][randomCoordY], neighbors, TILE_TYPES[3])) {
                     mapArray[randomCoordX][randomCoordY] = {
                         type: TILE_TYPES[3]
                     }
