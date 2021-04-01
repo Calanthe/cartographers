@@ -23,7 +23,8 @@ class App extends React.Component {
       return (
           <div className="cartographers">
               <header className="cartographers__header">
-                  Cartographers map generator
+                  <p className="cartographers__logo">CARTOGRAPHERS</p>
+                  <p className="cartographers__subtitle">map generator</p>
               </header>
               <Map tiles={this.state.tiles}/>
               <GenerateMapBtn onGenerateMap={this.handleGenerateMap.bind(this)}/>

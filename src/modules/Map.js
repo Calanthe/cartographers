@@ -19,7 +19,7 @@ export default function Map(props) {
 					className={tileClassName}
 					key={uniqueKey.toString()}
 				>
-					{tile.type === 'wasteland' ? 1 : tile.type === 'mountain' ? 2 : tile.type === 'ruin' ? 3 : 0}
+					
 				</div>
 			);
 		});
