@@ -25,11 +25,10 @@ body {
 
 .cartographers__map {
   display: grid;
-  grid-template-columns: repeat(11, 40px);
-  grid-template-rows: repeat(11, 40px);
+  grid-template-columns: repeat(11, 9%);
+  grid-template-rows: repeat(11, 38px);
   grid-auto-flow: row;
   grid-gap: 0px;
-  border: #A29E97 4px solid;
 }
 
 .cartographers__tile {
@@ -38,11 +37,19 @@ body {
 }
 
 .cartographers__tile:nth-child(11n) {
-  border-right: none;
+  border-right: #A29E97 4px solid;
+}
+
+.cartographers__tile:nth-child(11n+1) {
+  border-left: #A29E97 4px solid;
 }
 
 .cartographers__tile:nth-last-child(-n+11) {
-  border-bottom: none;
+  border-bottom: #A29E97 4px solid;
+}
+
+.cartographers__tile:nth-child(-n+11) {
+  border-top: #A29E97 4px solid;
 }
 
 .cartographers__tile--wasteland {
