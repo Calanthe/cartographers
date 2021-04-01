@@ -3,9 +3,9 @@ import App from './App';
 
 test('renders proper header and button', () => {
   render(<App />);
-  const headerElement = screen.getByText(/Cartographers map generator/i);
+  const headerElement = screen.getByText(/CARTOGRAPHERS/i);
   expect(headerElement).toBeInTheDocument();
 
-  const buttonElement = screen.getByText(/Generate new map/i);
+  const buttonElement = screen.getByText(/Generate a new map/i);
   expect(buttonElement).toBeInTheDocument();
 });
