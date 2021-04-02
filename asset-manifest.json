@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cartographers/static/css/main.846f6eec.chunk.css",
-    "main.js": "/cartographers/static/js/main.f54e3282.chunk.js",
-    "main.js.map": "/cartographers/static/js/main.f54e3282.chunk.js.map",
+    "main.js": "/cartographers/static/js/main.1ee3672e.chunk.js",
+    "main.js.map": "/cartographers/static/js/main.1ee3672e.chunk.js.map",
     "runtime-main.js": "/cartographers/static/js/runtime-main.a8917906.js",
     "runtime-main.js.map": "/cartographers/static/js/runtime-main.a8917906.js.map",
     "static/js/2.56ce92fb.chunk.js": "/cartographers/static/js/2.56ce92fb.chunk.js",
@@ -10,6 +10,8 @@
     "static/js/3.2427450e.chunk.js": "/cartographers/static/js/3.2427450e.chunk.js",
     "static/js/3.2427450e.chunk.js.map": "/cartographers/static/js/3.2427450e.chunk.js.map",
     "index.html": "/cartographers/index.html",
+    "service-worker.js": "/cartographers/service-worker.js",
+    "service-worker.js.map": "/cartographers/service-worker.js.map",
     "static/css/main.846f6eec.chunk.css.map": "/cartographers/static/css/main.846f6eec.chunk.css.map",
     "static/js/2.56ce92fb.chunk.js.LICENSE.txt": "/cartographers/static/js/2.56ce92fb.chunk.js.LICENSE.txt"
   },
@@ -17,6 +19,6 @@
     "static/js/runtime-main.a8917906.js",
     "static/js/2.56ce92fb.chunk.js",
     "static/css/main.846f6eec.chunk.css",
-    "static/js/main.f54e3282.chunk.js"
+    "static/js/main.1ee3672e.chunk.js"
   ]
 }
