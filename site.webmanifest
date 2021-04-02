@@ -1,0 +1,23 @@
+{
+    "short_name": "Cartographers",
+    "name": "Cartographers map generator",
+    "description": "A Cartographers' board game map generator",
+    "icons": [
+        {
+			"src": "/cartographers/android-chrome-144x144.png",
+			"sizes": "144x144",
+            "type": "image/png"
+		},
+        {
+			"src": "/cartographers/android-chrome-144x144.png",
+			"sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable"
+		}
+    ],
+    "start_url": "/cartographers/",
+    "background_color": "#D6C6B9",
+    "display": "standalone",
+    "theme_color": "#D6C6B9",
+    "prefer_related_applications": false
+  }
