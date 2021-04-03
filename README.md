@@ -8,6 +8,8 @@ You can check it here: http://zofiakorcz.pl/cartographers
 
 ![Image of Cartographers map](./public/cartographers.png)
 
+It's a PWA which means it is intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices. Users can add a shortcut to their Home screen so they can access it with a single tap.
+
 # How to run
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
