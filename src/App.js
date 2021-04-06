@@ -28,6 +28,17 @@ class App extends React.Component {
               </header>
               <Map tiles={this.state.tiles}/>
               <GenerateMapBtn onGenerateMap={this.handleGenerateMap.bind(this)}/>
+              <div className="cartographers__footer">
+                © 2021{" "}
+                <a
+                  href="http://zofiakorcz.pl"
+                  className="cartographers__footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Zofia Korcz
+                </a>
+              </div>
           </div>
       );
   };
